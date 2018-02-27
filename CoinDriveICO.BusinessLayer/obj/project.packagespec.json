@@ -1,0 +1,61 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/Users/alexander/Desktop/CoinDriveICO/CoinDriveICO.BusinessLayer/CoinDriveICO.BusinessLayer.csproj",
+    "projectName": "CoinDriveICO.BusinessLayer",
+    "projectPath": "/Users/alexander/Desktop/CoinDriveICO/CoinDriveICO.BusinessLayer/CoinDriveICO.BusinessLayer.csproj",
+    "outputPath": "/Users/alexander/Desktop/CoinDriveICO/CoinDriveICO.BusinessLayer/obj/",
+    "projectStyle": "PackageReference",
+    "originalTargetFrameworks": [
+      "netcoreapp2.0"
+    ],
+    "frameworks": {
+      "netcoreapp2.0": {
+        "projectReferences": {
+          "/Users/alexander/Desktop/CoinDriveICO/CoinDriveICO.DataLayer/CoinDriveICO.DataLayer.csproj": {
+            "projectPath": "/Users/alexander/Desktop/CoinDriveICO/CoinDriveICO.DataLayer/CoinDriveICO.DataLayer.csproj"
+          },
+          "/Users/alexander/Desktop/CoinDriveICO/CoinDriveICO.Framework/CoinDriveICO.Framework.csproj": {
+            "projectPath": "/Users/alexander/Desktop/CoinDriveICO/CoinDriveICO.Framework/CoinDriveICO.Framework.csproj"
+          }
+        }
+      }
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "2.0.0"
+        },
+        "MailKit": {
+          "target": "Package",
+          "version": "1.18.1.1"
+        },
+        "Microsoft.AspNetCore.Mvc": {
+          "target": "Package",
+          "version": "2.0.0"
+        },
+        "Microsoft.Extensions.DependencyInjection": {
+          "target": "Package",
+          "version": "2.0.0"
+        },
+        "Microsoft.Extensions.Options": {
+          "target": "Package",
+          "version": "2.0.0"
+        },
+        "Newtonsoft.Json": {
+          "target": "Package",
+          "version": "10.0.3"
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

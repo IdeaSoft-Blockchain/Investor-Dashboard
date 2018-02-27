@@ -1,0 +1,50 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/Users/alexander/Desktop/CoinDriveICO/CoinDriveICO.DataLayer/CoinDriveICO.DataLayer.csproj",
+    "projectName": "CoinDriveICO.DataLayer",
+    "projectPath": "/Users/alexander/Desktop/CoinDriveICO/CoinDriveICO.DataLayer/CoinDriveICO.DataLayer.csproj",
+    "outputPath": "/Users/alexander/Desktop/CoinDriveICO/CoinDriveICO.DataLayer/obj/",
+    "projectStyle": "PackageReference",
+    "originalTargetFrameworks": [
+      "netcoreapp2.0"
+    ],
+    "frameworks": {
+      "netcoreapp2.0": {
+        "projectReferences": {
+          "/Users/alexander/Desktop/CoinDriveICO/CoinDriveICO.Framework/CoinDriveICO.Framework.csproj": {
+            "projectPath": "/Users/alexander/Desktop/CoinDriveICO/CoinDriveICO.Framework/CoinDriveICO.Framework.csproj"
+          }
+        }
+      }
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "2.0.0"
+        },
+        "Microsoft.AspNetCore.Identity": {
+          "target": "Package",
+          "version": "2.0.0"
+        },
+        "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+          "target": "Package",
+          "version": "2.0.0"
+        },
+        "Microsoft.EntityFrameworkCore.SqlServer": {
+          "target": "Package",
+          "version": "2.0.0"
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

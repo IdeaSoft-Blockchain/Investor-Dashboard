@@ -1,0 +1,65 @@
+﻿@model CoinDriveICO.Web.Models.RegisterViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewBag.Title = "Registration";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="~/styles/style.css">
+    <title>Registration</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="auth-logo">
+        <a asp-controller="Home" asp-action="Index">
+            <img src="~/images/Logo.svg" alt="">
+        </a>
+    </div>
+    <div class="auth-block">
+        <form id="registerForm" class="registerForm form" asp-controller="Account" asp-action="Register">
+            <input type="hidden" asp-for="Affiliator" />
+            <div class="username">
+                <label class="custom" asp-for="UserName">Username</label>
+                <input name="username" type="text" asp-for="UserName" required>
+            </div>
+            <div class="fullname">
+                <label class="custom" asp-for="UserName">Full name</label>
+                <input name="fullname" type="text" asp-for="FullName" required>
+            </div>
+            <div class="email">
+                <label class="custom" for="email">Email</label>
+                <input name="email" type="text" asp-for="Email" required>
+            </div>
+            <div class="password">
+                <label class="custom" for="password">Password</label>
+                <input name="password" type="password" asp-for="Password" required>
+            </div>
+            <div class="repeatPassword">
+                <label class="custom" for="passwordConfirm">Repeat password</label>
+                <input id="confirmPassword" name="passwordConfirm" asp-for="PasswordConfirmation" type="password" required>
+            </div>
+            <div class="login-add">
+                <div class="remember-block">
+                    @*//TODO: Add agreement checkbox*@
+                    <input name="terms" class="check" type="checkbox" required>
+                    <span>I agree to the Terms and Conditions</span>
+                </div>
+
+            </div>
+            <button type="submit" class="btn-deafault">Register</button>
+            <div id="login-link" class="popup-link">
+                <a asp-action="Login" asp-controller="Account">Back to Login ></a>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="~/js/jquery-3.2.1.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/js/registr.js"></script>
+</body>
+</html>

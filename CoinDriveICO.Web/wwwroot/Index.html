@@ -1,0 +1,196 @@
+﻿@model CoinDriveICO.Web.Models.DashboardViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="favicon.ico" />
+    <link rel="stylesheet" href="styles/style.css">
+    <title>CoinDrive</title>
+</head>
+<body>
+    <header>
+        <div class="time-block">
+            <span class="time">@DateTime.Now</span>
+            <span class="greetings">Good evening, <span id="greetingsName">@Model.FullName</span></span>
+        </div>
+        <div class="logo">
+            <img src="images/Logo.svg" alt="">
+        </div>
+        <div class="features">
+            <div class="notification features-item">
+                <img src="images/notif.svg" alt="">
+            </div>
+            <div class="logout features-item">
+                <a asp-controller="Account" asp-action="SignOut">
+                    <img src="images/Out.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="sidebar">
+        <div class="sidebar-top">
+            <div class="sidebar-toggle">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="profile-image">
+                <img src="images/profile.png" alt="">
+            </div>
+            <div class="profile-name">
+                @Model.FullName
+            </div>
+            <div class="profile-email">
+                @Model.Email
+            </div>
+        </div>
+        <div class="sidebar-bottom">
+            <div class="sidebar-menu">
+                <div class="menu-item">
+                    <img src="images/crowdsale.svg" alt="">
+                    <a href="">CROWDSALE</a>
+                </div>
+                <div class="getRef">
+                    <span >Get refferal link</span>
+                </div>
+            </div>
+                
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <div class="card-small green-underline-sm">
+            <div class="icon big">
+                <h5>D</h5>
+            </div>
+            <div class="card-descr">
+                <p>Balance:</p>
+                <p class="count">@Model.Balance</p>
+                <p>Token</p>
+            </div>
+            <div class="card-bottom">
+                <div class="card-bottom-text">
+                    <p>ICO is On</p>
+                </div>
+                <div class="btn-reload">
+                    <!-- <img src="" alt=""> -->
+                </div>
+            </div>
+        </div>
+        <div class="card-small blue-underline">
+            <div class="icon">
+                <img src="images/eth.svg" alt="">
+            </div>
+            <div class="card-descr">
+                <p>Token price:</p>
+                <p class="count">@Model.TokenToEthRate</p>
+                <p>ETH</p>
+            </div>
+            <div class="card-bottom">
+                <div class="card-bottom-text">
+                    <p>> or equivalent</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-small yellow-underline">
+            <div class="icon">
+                <img src="images/B.svg" alt="">
+            </div>
+            <div class="card-descr">
+                <p>Token price:</p>
+                <p class="count">@Model.TokenToBtcRate</p>
+                <p>BTC</p>
+            </div>
+            <div class="card-bottom">
+                <div class="card-bottom-text">
+                    <p>> or equivalent</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-small light-green-underline-sm inverse">
+            <div class="diagram ">
+                <div class="circlestat" data-dimension="90" data-text="@(Model.PercentsGot + "%")" data-width="5" data-fontsize="18" data-percent="@Model.PercentsGot" data-fgcolor="#fff" data-bgcolor="rgba(255,255,255,0.5)" data-fill="rgba(0, 0, 0, 0)"></div>
+            </div>
+            <div class="card-descr">
+                <p>Sold:</p>
+                <p class="count">@Model.OverallBalance</p>
+                <p>Token</p>
+            </div>
+            <div class="card-bottom">
+                <div class="card-bottom-text">
+                    <p>Max. goal 100000</p>
+                </div>
+            </div>
+        </div>
+        <div class="medium-card blue-underline">
+            <div class="medium-card-top">
+                <h3>Invest Ethereum</h3>
+                <img src="images/eth.svg" alt="">
+            </div>
+            <div class="medium-card-descr">
+                <h4>@Model.EthToTokenRate Token / 1 ETH</h4>
+            </div>
+            <div class="medium-card-bottom">
+                <div class="left">
+                    <p><span class="blue">+ Click</span> to get address.</p>
+                    <p>&#9733 Min. payment 0.00100 ETH</p>
+                </div>
+                <div class="right">
+                    <a class="addres" asp-action="GetInvestAddress" asp-route-adapterName="ETH">Get Address</a>
+                </div>
+            </div>
+        </div>
+        <div class="medium-card yellow-underline">
+            <div class="medium-card-top">
+                <h3>Invest Bitcoin</h3>
+                <img src="images/B.svg" alt="">
+            </div>
+            <div class="medium-card-descr">
+                <h4>@Model.BtcToTokenRate Token / 1 BTC</h4>
+            </div>
+            <div class="medium-card-bottom">
+                <div class="left">
+                    <p><span class="yellow">+ Click</span> to get address.</p>
+                    <p>&#9733 Min. payment 0.00100 ETH</p>
+                </div>
+                <div class="right">
+                    <a class="addres" asp-action="GetInvestAddress" asp-route-adapterName="BTC">Get Address</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="b-popup getAddres" id="popupReset">
+        <div class="b-popup-content addrPos">
+        <div class="popup-title">
+             <h2>Your wallet addres:</h2>
+                <div class="cross">
+                    <img src="images/close-black.svg" alt="">
+                </div>
+        </div>
+        <div class="popup-body">
+                <span class="wallet-addres" >1BQ9qza7fn9snSCyJQB3ZcN46biBtkt4ee</span>
+        </div>
+        </div>
+    </div>
+    <div class="b-popup getRefLink" id="popupReset">
+        <div class="b-popup-content addrPos">
+        <div class="popup-title">
+             <h2>Your referral link:</h2>
+                <div class="cross">
+                    <img src="images/close-black.svg" alt="">
+                </div>
+        </div>
+        <div class="popup-body">
+                <a href="">link here</a>
+        </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.circliful.min.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>

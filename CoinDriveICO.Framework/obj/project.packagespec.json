@@ -1,0 +1,38 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/Users/alexander/Desktop/CoinDriveICO/CoinDriveICO.Framework/CoinDriveICO.Framework.csproj",
+    "projectName": "CoinDriveICO.Framework",
+    "projectPath": "/Users/alexander/Desktop/CoinDriveICO/CoinDriveICO.Framework/CoinDriveICO.Framework.csproj",
+    "outputPath": "/Users/alexander/Desktop/CoinDriveICO/CoinDriveICO.Framework/obj/",
+    "projectStyle": "PackageReference",
+    "originalTargetFrameworks": [
+      "netcoreapp2.0"
+    ],
+    "frameworks": {
+      "netcoreapp2.0": {
+        "projectReferences": {}
+      }
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "2.0.0"
+        },
+        "Newtonsoft.Json": {
+          "target": "Package",
+          "version": "10.0.3"
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

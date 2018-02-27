@@ -1,0 +1,50 @@
+﻿@model CoinDriveICO.Web.Models.SignInViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewBag.Title = "title";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="~/styles/style.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="auth-logo">
+        <a asp-controller="Home" asp-action="Index">
+            <img src="~/images/Logo.svg" alt="">
+        </a>
+    </div>
+    <div class="auth-block">
+        <form id="loginForm" class="loginForm form" asp-action="Login" asp-controller="Account">
+            <div class="username">
+                <label class="custom" afor="username">Username</label>
+                <input name="username" type="text" asp-for="UserName" required >
+            </div>
+            <div class="password">
+                <label class="custom" for="password">Password</label>
+                <input name="password" type="password" asp-for="Password" required >
+            </div>
+            <div class="login-add">
+                <div class="remember-block">
+                    <input class="check" type="checkbox" asp-for="IsPersistant" >
+                    <span class="remember-link">Remember me</span>
+                </div>
+                <a asp-controller="Account" asp-action="ForgotPassword">Forgot password</a>				
+            </div>
+            <button class="btn-deafault" >Login</button>
+            <div id="register-link" class="popup-link">
+                <a asp-action="Register" asp-controller="Account">Register ></a>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="~/js/jquery-3.2.1.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/js/login.js"></script>
+</body>
+</html>
